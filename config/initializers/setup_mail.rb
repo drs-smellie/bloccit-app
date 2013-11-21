@@ -6,7 +6,7 @@ if Rails.env.development?
     :authentication => :plain,
     :user_name      => 'app19456994@heroku.com',
     :password       => 'bf9vfotc',
-    :domain         => 'heroku.com',
+    :domain         => 'http://drs-smellie-bloccit.herokuapp.com',
     :enable_starttls_auto => true
   }
 end

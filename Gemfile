@@ -39,6 +39,7 @@ gem 'devise'
 # Use Cancan to authorize different users for different tasks in app.
 gem 'cancan'
 
+gem 'redcarpet'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
