@@ -1,6 +1,9 @@
 <div class="media">
   <small>
     <%= comment.user.name %> commented <%= time_ago_in_words(comment.created_at) %> ago
+    <% if can? :destroy, comment %>
+      <%= link_to "Delete", [@topic, @post, comment], method: :delete, confirm: 'Are you sure you want to delete this post?' %>
+    <% end %>
   </small>
   <p><%= comment.body %></p>
 </div>
