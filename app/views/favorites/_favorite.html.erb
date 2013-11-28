@@ -1,0 +1,15 @@
+<% if can? :create, Favorite %>
+  <div class="favorite">
+    <% if favorite = current_user.favorited(post) %>
+      <%= link_to [topic, post, favorite], class: 'btn btn-small btn-primary', method: :delete do %>
+        <i class="glyphicon glyphicon-heart-empty"> </i>&nbsp;Unfavorite
+      <% end %>
+    <% else %>
+      <%= form_for [topic, post, Favorite.new] do |f| %>
+        <%= button_tag type: 'submit', class: 'btn btn-small btn-default' do %>
+          <i class="glyphicon glyphicon-heart"> </i>&nbsp;Favorite it
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
