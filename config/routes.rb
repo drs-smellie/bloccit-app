@@ -3,7 +3,7 @@ Bloccit::Application.routes.draw do
   get "posts/index"
   devise_for :users
 
-  resources :users, only: [:index, :show]
+  resources :users
   resources :posts, only: [:index]
   resources :topics do
     resources :posts, except: [:index], controller: 'topics/posts' do

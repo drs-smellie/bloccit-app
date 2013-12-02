@@ -1,0 +1,40 @@
+<h2>Edit <%= @user.name %></h2>
+
+<%= form_for(@user, :html => { :class => 'form-horizontal' }) do |f| %>
+
+  <%= debug @user.errors if @user.errors.any? %>
+
+  <div class="control-group">
+    <%= f.label :name, class: 'control-label'  %>
+    <div class="controls">
+      <%= f.text_field :name, :autofocus => true %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, class: 'control-label'  %>
+    <div class="controls">
+      <%= f.email_field :email %>
+    </div>
+  </div>    
+
+  <div class="control-group">
+    <%= image_tag(f.object.avatar.small.url) if f.object.avatar? %>
+    <%= f.label :avatar, class: 'control-label' %>
+    <div class="controls"> 
+      <%= f.file_field :avatar %>
+    </div>
+  </div>
+  <p>
+  <div class="control-group">
+    <%= f.label :email_favorites, class: 'control-label' %>
+    <div class="controls">
+      <%=f.check_box :email_favorites %>
+    </div>
+  </div>
+  <p>
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit "Update", class: 'btn' %>
+    </div>
+  </div>  
+<% end %>
