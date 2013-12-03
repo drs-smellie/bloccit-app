@@ -54,6 +54,8 @@ gem 'jbuilder', '~> 1.2'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'factory_girl'
 end
 
 group :doc do
