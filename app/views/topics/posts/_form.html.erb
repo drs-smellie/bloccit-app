@@ -23,7 +23,7 @@
   <% end %>
 
     <div class="control-group">
-      <%= image_tag(f.object.image.small.url) if f.object.image? %>
+      <%= image_tag(f.object.image.thumb.url) if f.object.image? %>
       <%= f.label :image, class: 'control-label' %>
       <div class="controls"> 
       <%= f.file_field :image %>
